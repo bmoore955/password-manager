@@ -13,6 +13,7 @@ Theme::Theme(QObject *parent)
     : QObject{parent}
 {
     // Declare colors here
+    m_colors["background"] = hsv(0, 0, 0);
     m_colors["text"] = hsv(0, 0, 1);
 }
 

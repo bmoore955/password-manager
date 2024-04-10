@@ -4,15 +4,24 @@ import "qrc:/fonts/MaterialDesignIconGlyphs.js" as MaterialGlyphs
 Text {
     id: iconBase
 
+    property int size: 24
     property string icon: "settings"
-    property int size: 48
+    readonly property string iconCode: {
+        if (MaterialGlyphs.glyphs[iconBase.icon] === undefined)
+            return "";
+        return MaterialGlyphs.glyphs[iconBase.icon];
+    }
 
     width: size
     height: size
-    font.pixelSize: size
-    text: MaterialGlyphs.glyphs[iconBase.icon]
+    text: iconCode
     color: theme.color("text")
-    font.family: materialFont.name
+    horizontalAlignment: Text.AlignHCenter
+    verticalAlignment: Text.AlignVCenter
+    font {
+        family: materialFont.name
+        pixelSize: size
+    }
 
     FontLoader {
         id: materialFont

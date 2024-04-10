@@ -10,4 +10,16 @@ Window {
     visibility: Window.Minimized
     title: qsTr("Password Manager")
     color: theme.color("background")
+
+    Row {
+        anchors.centerIn: parent
+        spacing: 15
+        Icon {}
+        Text {
+            text: "text"
+            color: "white"
+            anchors.verticalCenter: parent.verticalCenter
+            verticalAlignment: Text.AlignVCenter
+        }
+    }
 }

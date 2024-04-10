@@ -1,7 +1,7 @@
 import QtQuick 2.15
 import "qrc:/fonts/MaterialDesignIconGlyphs.js" as MaterialGlyphs
 
-Text {
+AppText {
     id: iconBase
 
     property int size: 24
@@ -15,9 +15,7 @@ Text {
     width: size
     height: size
     text: iconCode
-    color: theme.color("text")
     horizontalAlignment: Text.AlignHCenter
-    verticalAlignment: Text.AlignVCenter
     font {
         family: materialFont.name
         pixelSize: size

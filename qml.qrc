@@ -4,5 +4,6 @@
         <file>fonts/MaterialDesignIconGlyphs.js</file>
         <file>fonts/materialdesignicons-webfont.ttf</file>
         <file>qml/Icon.qml</file>
+        <file>qml/AppText.qml</file>
     </qresource>
 </RCC>

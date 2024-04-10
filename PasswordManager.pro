@@ -1,8 +1,10 @@
 QT += quick
 
-SOURCES += $$files(*.cpp)
+HEADERS += $$files(src/*.hpp, true)
+SOURCES += $$files(src/*.cpp, true)
+SOURCES += main.cpp
 
-RESOURCES += qml.qrc
+RESOURCES += $$files(*.qrc)
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

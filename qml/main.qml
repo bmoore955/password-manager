@@ -9,4 +9,5 @@ Window {
     maximumHeight: height
     visibility: Window.Minimized
     title: qsTr("Password Manager")
+    color: theme.color("background")
 }

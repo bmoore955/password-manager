@@ -1,5 +1,8 @@
 <RCC>
     <qresource prefix="/">
         <file>qml/main.qml</file>
+        <file>fonts/MaterialDesignIconGlyphs.js</file>
+        <file>fonts/materialdesignicons-webfont.ttf</file>
+        <file>qml/Icon.qml</file>
     </qresource>
 </RCC>

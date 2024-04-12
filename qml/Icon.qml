@@ -12,13 +12,11 @@ AppText {
         return MaterialGlyphs.glyphs[iconBase.icon];
     }
 
-    width: size
-    height: size
-    text: iconCode
+    text: iconBase.iconCode
     horizontalAlignment: Text.AlignHCenter
     font {
         family: materialFont.name
-        pixelSize: size
+        pixelSize: iconBase.size
     }
 
     FontLoader {

@@ -3,7 +3,9 @@
         <file>fonts/MaterialDesignIconGlyphs.js</file>
         <file>fonts/materialdesignicons-webfont.ttf</file>
         <file>qml/AppText.qml</file>
+        <file>qml/BaseButton.qml</file>
         <file>qml/Icon.qml</file>
+        <file>qml/IconButton.qml</file>
         <file>qml/main.qml</file>
     </qresource>
 </RCC>

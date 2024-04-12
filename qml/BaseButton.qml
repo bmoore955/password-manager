@@ -5,7 +5,6 @@ Rectangle {
 
     property bool isPressed: false
     property string backgroundColor: theme.color("background")
-    property string borderColor: theme.color("")
     property string textColor: theme.color("text")
 
     signal clicked()
@@ -14,6 +13,10 @@ Rectangle {
     height: 50
     radius: 10
     color: isPressed ? Qt.darker(baseButton.backgroundColor, 1.5) : baseButton.backgroundColor
+    border {
+        color: theme.color("text")
+        width: isPressed ? 2 : 0
+    }
 
     MouseArea {
         anchors.fill: parent

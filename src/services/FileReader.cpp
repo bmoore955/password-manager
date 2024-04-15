@@ -1,5 +1,9 @@
 #include "FileReader.hpp"
 
+/*******************************
+ * SINGLETON FUNCTIONALITY
+ *******************************/
+
 FileReader *FileReader::m_instance = 0;
 
 FileReader *FileReader::instance()
@@ -8,6 +12,10 @@ FileReader *FileReader::instance()
         m_instance = new FileReader();
     return m_instance;
 }
+
+/*******************************
+ * CLASS METHODS
+ *******************************/
 
 FileReader::FileReader(QObject *parent)
     : QObject{parent}
@@ -18,7 +26,7 @@ void FileReader::open()
 {
     QDir savedFilesDir(SAVED_DIR);
     if (!savedFilesDir.exists()) {
-        savedFilesDir.mkpath(SAVED_DIR);
+        savedFilesDir.mkpath(SAVED_DIR); // Creates all necessary subdirectories
     }
     if (!m_passwordsFile.isOpen()) {
         m_passwordsFile.open(QIODevice::ReadWrite);

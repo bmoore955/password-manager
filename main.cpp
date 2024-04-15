@@ -1,6 +1,7 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
+#include "src/services/FileReader.hpp"
 #include "src/services/Theme.hpp"
 
 int main(int argc, char *argv[])
@@ -8,6 +9,10 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
 
     QQmlApplicationEngine engine;
+
+    // FOR TESTING ONLY
+    FileReader::instance()->open();
+    FileReader::instance()->save();
 
     engine.rootContext()->setContextProperty("theme", Theme::instance());
 

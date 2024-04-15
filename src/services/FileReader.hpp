@@ -25,6 +25,8 @@ public:
     void readJson();
     // Write the edited passwords JSON back into the file.
     void save();
+    // Save and close the file.
+    void close();
 
 private:
     explicit FileReader(QObject *parent = nullptr);

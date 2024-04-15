@@ -50,3 +50,9 @@ void FileReader::save()
     QByteArray data = doc.toJson();
     m_passwordsFile.write(data);
 }
+
+void FileReader::close()
+{
+    save();
+    m_passwordsFile.close();
+}

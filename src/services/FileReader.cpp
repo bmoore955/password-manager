@@ -13,6 +13,16 @@ FileReader *FileReader::instance()
     return m_instance;
 }
 
+QJsonObject FileReader::json()
+{
+    return m_json;
+}
+
+void FileReader::setJson(QJsonObject newJson)
+{
+    m_json = newJson;
+}
+
 /*******************************
  * CLASS METHODS
  *******************************/
@@ -46,6 +56,7 @@ void FileReader::readJson()
 void FileReader::save()
 {
     m_passwordsFile.resize(0);
+    qDebug() << "saving file with" << m_json.count() << "passwords:" << m_json.keys();
     QJsonDocument doc(m_json);
     QByteArray data = doc.toJson();
     m_passwordsFile.write(data);

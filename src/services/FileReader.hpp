@@ -18,6 +18,9 @@ class FileReader : public QObject
 public:
     static FileReader *instance();
 
+    QJsonObject json();
+    void setJson(QJsonObject newJson);
+
     // Opens the file that contains all saved passwords.
     // This will create a directory path and file if necessary.
     void open();

@@ -13,6 +13,15 @@ FileReader *FileReader::instance()
     return m_instance;
 }
 
+/*******************************
+ * CLASS METHODS
+ *******************************/
+
+FileReader::FileReader(QObject *parent)
+    : QObject{parent}
+    , m_passwordsFile(SAVED_PATH)
+{}
+
 QJsonObject FileReader::json()
 {
     return m_json;
@@ -24,15 +33,6 @@ void FileReader::setJson(QJsonObject newJson)
         return;
     m_json = newJson;
 }
-
-/*******************************
- * CLASS METHODS
- *******************************/
-
-FileReader::FileReader(QObject *parent)
-    : QObject{parent}
-    , m_passwordsFile(SAVED_PATH)
-{}
 
 void FileReader::open()
 {

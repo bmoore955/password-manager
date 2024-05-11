@@ -22,6 +22,18 @@ FileReader::FileReader(QObject *parent)
     , m_passwordsFile(SAVED_PATH)
 {}
 
+QJsonObject FileReader::json()
+{
+    return m_json;
+}
+
+void FileReader::setJson(QJsonObject newJson)
+{
+    if (m_json.keys() == newJson.keys())
+        return;
+    m_json = newJson;
+}
+
 void FileReader::open()
 {
     QDir savedFilesDir(SAVED_DIR);
@@ -46,6 +58,7 @@ void FileReader::readJson()
 void FileReader::save()
 {
     m_passwordsFile.resize(0);
+    qDebug() << "saving file with" << m_json.count() << "passwords:" << m_json.keys();
     QJsonDocument doc(m_json);
     QByteArray data = doc.toJson();
     m_passwordsFile.write(data);

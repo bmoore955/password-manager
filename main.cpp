@@ -2,6 +2,7 @@
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
 #include "src/PasswordEditor.hpp"
+#include "src/Tester.hpp"
 #include "src/services/FileReader.hpp"
 #include "src/services/Theme.hpp"
 
@@ -16,6 +17,7 @@ int main(int argc, char *argv[])
     FileReader::instance()->save();
 
     PasswordEditor *passwordEditor = new PasswordEditor();
+    Tester *tester = new Tester(passwordEditor);
 
     QObject::connect(&app,
                      &QCoreApplication::aboutToQuit,
@@ -23,6 +25,7 @@ int main(int argc, char *argv[])
                      &FileReader::close);
 
     engine.rootContext()->setContextProperty("editor", passwordEditor);
+    engine.rootContext()->setContextProperty("tester", tester);
     engine.rootContext()->setContextProperty("theme", Theme::instance());
 
     const QUrl url("qrc:/qml/main.qml");

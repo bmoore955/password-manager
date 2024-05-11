@@ -17,7 +17,7 @@ Window {
 
         BaseButton {
             backgroundColor: theme.color("base-40")
-            onClicked: editor.add("titletest", "usernametest", "passwordtest");
+            onClicked: tester.addRandom();
 
             AppText {
                 anchors.centerIn: parent

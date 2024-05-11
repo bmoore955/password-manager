@@ -20,6 +20,8 @@ QJsonObject FileReader::json()
 
 void FileReader::setJson(QJsonObject newJson)
 {
+    if (m_json.keys() == newJson.keys())
+        return;
     m_json = newJson;
 }
 

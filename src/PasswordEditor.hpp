@@ -12,15 +12,8 @@ class PasswordEditor : public QObject
 public:
     explicit PasswordEditor(QObject *parent = nullptr);
 
-    struct Password
-    {
-        QString title;
-        QString username;
-        QString password;
-    };
-
     Q_INVOKABLE void add(QString title, QString username, QString password);
-    Q_INVOKABLE Password edit(QString title);
+    Q_INVOKABLE QJsonObject edit(QString title);
     Q_INVOKABLE bool remove(QString title);
 
 private:

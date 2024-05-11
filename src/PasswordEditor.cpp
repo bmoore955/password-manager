@@ -14,7 +14,7 @@ void PasswordEditor::add(QString title, QString username, QString password)
     FileReader::instance()->setJson(m_json);
 }
 
-PasswordEditor::Password PasswordEditor::edit(QString title)
+QJsonObject PasswordEditor::edit(QString title)
 {
     Q_UNUSED(title)
 }
